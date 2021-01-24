@@ -1,0 +1,9 @@
+.Line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Line > * {
+    margin-left: var(--margin_base);
+}

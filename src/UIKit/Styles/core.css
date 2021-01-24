@@ -1,0 +1,45 @@
+
+
+html, body, .App, #root {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x:hidden;
+}
+
+body, input, textarea {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+:root {
+  --margin_base: 5px;
+  --margin_bigger: 40px;
+  --margin_biggest: 60px;
+  --margin_row: 20px 0px;
+
+  --padding_base: 20px;
+  
+  --radius_primary: 10px;
+
+
+  --primary: #61DAFB;
+
+  --font_size_base: 1em;
+  --font_size_big: 1.1em;
+  --font_headline: 3em;
+  --font_headline_smaller: 2em;
+
+  --text_primary: #222222;
+  --text_secondary: #757575;
+}
+
+
+

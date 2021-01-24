@@ -1,0 +1,11 @@
+.Input {
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    padding: 8px;
+}
+
+.Input input {
+    background-color: transparent;
+    border: none;
+    width: -webkit-fill-available;
+}

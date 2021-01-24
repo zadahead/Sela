@@ -1,0 +1,9 @@
+.Box {
+    background-color: #282c34;
+    padding: var(--padding_base);
+    color: #fff;
+    border-radius: var(--radius_primary);
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+}

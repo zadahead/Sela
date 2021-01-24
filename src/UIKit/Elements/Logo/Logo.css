@@ -1,0 +1,10 @@
+
+.Logo img {
+    width: 22px;
+}
+
+.Logo .title {
+    color: var(--primary);
+    font-size: var(--font_size_big);
+    font-weight: bold;
+}

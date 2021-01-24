@@ -1,0 +1,29 @@
+h1, h2, p, div {
+    margin: 0;
+    color: var(--text_primary);
+}
+
+h1 {
+    font-size: var(--font_headline);
+}
+
+h2 {
+    font-size: var(--font_headline_smaller);
+}
+
+p {
+    font-size: var(--font_size_big);
+    color: var(--text_secondary);
+}
+
+div {
+    font-size: var(--font_size);
+}
+
+span.var {
+    color: blue;
+}
+
+span.function {
+    color: purple;
+}
