@@ -1,13 +1,18 @@
 .Layout {
     display: grid;
     height: 100%;
+    grid-template-rows: 1fr;
+}
+
+
+
+.Layout.main {
     grid-template-rows: 60px 1fr;
 }
 
-.Layout > :nth-child(1) {
+.Layout.main > :nth-child(1) {
     background-color: #20232a;
 }
-
 
 .Layout.sidebar {
     grid-template-rows: 1fr;
@@ -23,6 +28,7 @@
     background-color: #F7F7F7;
     border-left: 1px solid #ececec;
     margin-right: -100%;
+    margin-left: var(--margin_bigger);
 }
 
 .Layout.sidebar > :nth-child(2) {

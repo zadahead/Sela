@@ -1,7 +1,16 @@
 .Input {
     width: 100%;
-    border: 1px solid #e1e1e1;
-    padding: 8px;
+}
+
+.Input .wrap {
+    border-bottom: 1px solid var(--border-layout);
+    background-color: var(--background-layout);
+    padding: var(--padding-layout);
+}
+
+.Input .wrap:hover {
+    cursor: pointer;
+    background-color: var(--background-layout-hover);
 }
 
 .Input input {

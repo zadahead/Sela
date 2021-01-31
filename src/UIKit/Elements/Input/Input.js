@@ -2,6 +2,8 @@ import React from 'react';
 
 import './Input.css';
 
+import { Line, Icon } from '../../../UIKit';
+
 class Input extends React.Component {
 
     //constructor
@@ -9,13 +11,38 @@ class Input extends React.Component {
         super(props);
 
         this.state = {
+            isFocus: false,
             value: props.value
         }
+
+        this.textInput = React.createRef();
+        this.textInputWrap = React.createRef();
     }
 
     //when component first render 
+    componentDidMount() {
+        this.textInput.current.addEventListener("focus", this.focus);
+        this.textInput.current.addEventListener("blur", this.blur);
+        this.textInputWrap.current.addEventListener("click", this.focus);
+    }
 
-    //when component is updated 
+    focus = () => {
+        if (!this.state.isFocus) {
+            this.textInput.current.select();
+            this.textInputWrap.current.classList.add('focused');
+            this.setState({ isFocus: true });
+        }
+    }
+
+    blur = () => {
+        setTimeout(() => {
+            this.setState({ isFocus: false });
+        }, 300);
+    }
+
+    //when component is updated     
+    componentDidUpdate() {
+    }
 
     //when component is deleted
 
@@ -39,13 +66,32 @@ class Input extends React.Component {
             case 'lower':
                 return value.toLowerCase();
             default:
-                return value;
+                return value || '';
         }
     }
 
     getValue = () => {
-        console.log(this.state.value);
         return this.fixText(this.state.value);
+    }
+
+    getPlaceholder = () => {
+        return this.props.placeholder || 'Write something...';
+    }
+
+    getIcon = () => {
+        return this.props.icon ? <Icon icon={this.props.icon}></Icon> : null;
+    }
+
+    getMaxLength = () => {
+        return this.props.maxLength ? this.props.maxLength : '';
+    }
+
+
+    getCharactersLeft = () => {
+        var total = this.props.maxLength;
+        var length = this.textInput.current?.value.length || '0';
+
+        return `${length}/${total}`;
     }
 
     //render 
@@ -53,7 +99,23 @@ class Input extends React.Component {
     render = () => {
         return (
             <div className="Input">
-                <input value={this.getValue()} onChange={this.onChange}></input>
+                <div className="wrap" ref={this.textInputWrap}>
+                    <Line>
+                        <input ref={this.textInput} value={this.getValue()} onChange={this.onChange} placeholder={this.getPlaceholder()} maxLength={this.getMaxLength()}></input>
+                        {this.getIcon()}
+                    </Line>
+                </div>
+                {
+                    (() => {
+                        return this.props.maxLength ?
+                            <Line justify="between" margin="t">
+                                <div>Max {this.props.maxLength} Characters</div>
+                                <div>{this.getCharactersLeft()}</div>
+                            </Line>
+                            :
+                            null
+                    })()
+                }
             </div>
         )
     }

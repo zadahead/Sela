@@ -38,7 +38,18 @@ textarea:focus, input:focus{
   --font_headline_smaller: 2em;
 
   --text_primary: #222222;
+  --text_alter: #f1f1f1;
   --text_secondary: #757575;
+
+  --background-layout: #F6F6F8;
+  --background-layout-hover: #f1f1f1;
+  --border-layout: #B6B6B6;
+  
+  --padding-layout: 20px 15px;
+  --padding-layout-v: 15px 20px;
+  --padding-layout-smaller: 15px 15px;
+
+  --shadow: 3px 4px 5px #e1e1e1;
 }
 
 

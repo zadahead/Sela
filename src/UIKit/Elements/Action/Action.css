@@ -1,0 +1,8 @@
+.Action {
+    background-color: var(--primary);
+    padding: var(--padding-layout-v);
+}
+
+.Action .text {
+    color: var(--text_primary);
+}

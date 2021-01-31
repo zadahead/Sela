@@ -9,7 +9,13 @@ import Nav from './Layouts/Nav/Nav.js';
 import Inner from './Layouts/Inner/Inner.js';
 
 import Input from './Elements/Input/Input.js';
+import { Action } from './Elements/Action/Action.js';
 import Logo from './Elements/Logo/Logo.js';
+import DropDown from './Elements/DropDown/DropDown.js';
+import { Icon } from './Elements/Icon/Icon.js';
+
+
+import Table from './Component/Table/Table.js';
 
 export {
     //Layouts
@@ -25,5 +31,12 @@ export {
 
     //Elements
     Input,
-    Logo
+    Logo,
+    DropDown,
+    Icon,
+    Action,
+
+
+    //Components
+    Table,
 }
